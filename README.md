@@ -174,3 +174,8 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 - Use Automatic deploys if you would like a new build when changes are pushed to GitHub from Gitpod
 - Use Manual deploy for a new build every time this button is clicked.
 - Once completed click View App.
+
+# Credits 
+Thanks to my code institute mentor Adegbenga Adeye for all the help, and everyone who works in code institute for their great work.
+Thanks to Josh Wardle for creating the game wordle, from which I took heavy inspiration.
+Big thanks to everyone on Slack for all the help they gave!
