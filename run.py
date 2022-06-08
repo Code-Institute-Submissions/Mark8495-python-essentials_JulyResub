@@ -101,7 +101,7 @@ print("Created by Mark Byrne".center(80) + "\n")
 # sets initial values for game.
 start_game = True
 play_game = False
-while start_game == True:
+while start_game:
     # creates the random word answers
     answer1 = random.choice(word_list)
     answer2 = random.choice(word_list)
@@ -118,13 +118,20 @@ while start_game == True:
         'Press 1 to learn how to play, press 2 to choose difficulty: \n')
     if start == '1':
         #   instructions on how to play
-        print("Welcome to Wordel. A wordle clone. This game has three different modes.")
-        print('The game is simple. Input a five letter word.')
-        print('If the letters in your guess are both in the word and in the same position')
-        print('It will return ' + colored(0, 255, 0, "green"))
-        print('If the letters in your guess are in the word but not in the same position')
-        print('It will return ' + colored(255, 255, 0, "Yellow"))
-        print('If the letter is not in the word at all. It will return ' +
+        print(
+            "Welcome to Wordel. A wordle clone. This game has three different modes.")
+        print(
+            'The game is simple. Input a five letter word.')
+        print(
+            'If the letters in your guess are both in the word and in the same position')
+        print(
+            'It will return ' + colored(0, 255, 0, "green"))
+        print(
+            'If the letters in your guess are in the word but not in the same position')
+        print(
+            'It will return ' + colored(255, 255, 0, "Yellow"))
+        print(
+            'If the letter is not in the word at all. It will return ' +
               colored(255, 0, 0, 'Red'))
         print("That's it, simple right?")
         print('There are three modes you can choose!')
@@ -138,7 +145,7 @@ while start_game == True:
     max_attempts = num_of_attempts(challenge)
     count = max_attempts + 1
     play_game = True
-    while play_game == True:
+    while play_game:
         # sets prettytable to default
         table.clear()
         if max_attempts == 0:
@@ -162,7 +169,7 @@ while start_game == True:
                 complete_guess = True
                 cls()
             # starts the game
-            while complete_guess == True:
+            while complete_guess:
                 if challenge == '2':
                     # if the game is in hard mode
                     if guess_1 == 1:
