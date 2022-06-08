@@ -147,9 +147,10 @@ while start_game == True:
             print(Lose)
             restart_game()
         else:
+            cls()
             remain = count - max_attempts
             # cheatsheet
-            print(answer1, answer2, answer3, answer4)
+            # print(answer1, answer2, answer3, answer4)
             # input for guess
             word = input('Guess a five letter Word: ').lower()
             if len(word) != WORD_LENGTH:

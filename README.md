@@ -1,31 +1,33 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# WORDEL
+This is a Python-based word game, where the user has to guess the correct word, using clues from previous guesses. For the user to win. They must guess the correct word or words depending on the game mode.
 
-Welcome Mark8495,
+[Link to deployed version.](https://ci-project3.herokuapp.com/)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+# User Experience
+The game is strictly teminal based, so all user interaction is through the terminal. It is hosted on Heroku that is a reliable host that allows for a wide range of languages used.
 
-## Reminders
+## Gameplay
+Due to the limits of the terminal, I thought a simple word game like the newly popular wordle would be a great game to port to the terminal. Where the gameplay is functionally the same as it would be elsewhere. Leading to easy gameplay that anyone can do.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## Idea
+I took heavy inspiration from the game Wordle created by Josh Wardle, that was very popular as of late. I have greatly enjoyed the game and think that is suitable for anyone to play. I really enjoy the inclusiveness of the game, allowing it to cross generations and bring people together.
 
-## Creating the Heroku app
+To help streamline the development of the project I created a flowchart on [Lucid Chart](https://www.lucidchart.com/)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+![Flow Chart](/assets/images/Screenshot%202022-06-08%20at%2014.57.52.png)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+Once I had the outline of the project I started with the code for the project. I decided to go a step further than the original and add options to guess multiple words to add difficulty to the game. I wanted the game to be simple to use, but allow the more confident players to go for a greater challenge.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Goal
 
-Connect your GitHub repository and deploy as normal.
+1. Create a great text based game in python. That is easily played in the terminal.
 
-## Constraints
+2. For the game to be enjoyable for anyone who wants to pick it up.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+3. For their to be a clear goal for the game that is easily understood but harder to accomplish.
 
------
-Happy coding!
+4. Utlise the current popularity of word games to attract a large audience base.
+
+### Target Audience
+I want the game to be accesible to as many people as possible. For those who enjoy both hard and easy word based puzzles.
