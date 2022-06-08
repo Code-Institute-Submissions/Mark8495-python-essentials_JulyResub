@@ -144,9 +144,9 @@ while start_game:
     # sets the max attempts for a player
     max_attempts = num_of_attempts(challenge)
     count = max_attempts + 1
+    cls()
     play_game = True
     while play_game:
-        cls()
         # sets prettytable to default
         table.clear()
         if max_attempts == 0:

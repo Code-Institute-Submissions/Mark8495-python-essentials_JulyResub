@@ -31,3 +31,30 @@ Once I had the outline of the project I started with the code for the project. I
 
 ### Target Audience
 I want the game to be accesible to as many people as possible. For those who enjoy both hard and easy word based puzzles.
+
+### User Stories
+
+As a developer I want to...
+-I want to create a simple game that is enoyable for all ages.
+-I want the player to be engaged and have a clear sense of what to do.
+-I want to give clear instructions for how to play.
+-I want to create a game that can be played many times, with the help of other people or alone.
+-I want them to feel a sense of accomplishment when they complete the game.
+
+
+As a new user, I want to...
+-To understand the game quickly.
+-To be able to play the game.
+-To have a clear goal for the game.
+-To easily distuingish how to move forward in the game.
+-A clear sense of what they are doing right or wrong.
+-To be engaged and enjoy themselves.
+-To be able to play again once the game is completed.
+-To have a new word every game so it feels fresh and challenging every time.
+
+As a returning user, I want to...
+-To be able to choose different game modes.
+-To feel a sense of growth and accomplishment from the game.
+-To feel like the game is fresh and enjoyable every time they come back.
+
+# Feautures
