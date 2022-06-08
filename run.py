@@ -132,7 +132,7 @@ while start_game:
             'It will return ' + colored(255, 255, 0, "Yellow"))
         print(
             'If the letter is not in the word at all. It will return ' +
-              colored(255, 0, 0, 'Red'))
+            colored(255, 0, 0, 'Red'))
         print("That's it, simple right?")
         print('There are three modes you can choose!')
         print('Normal, where you only guess one word!')
@@ -154,7 +154,6 @@ while start_game:
             print(Lose)
             restart_game()
         else:
-            cls()
             remain = count - max_attempts
             # cheatsheet
             # print(answer1, answer2, answer3, answer4)
@@ -257,3 +256,4 @@ while start_game:
                         restart_game()
                     complete_guess = False
                 max_attempts -= 1
+                cls()
