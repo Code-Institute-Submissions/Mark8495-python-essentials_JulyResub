@@ -146,6 +146,7 @@ while start_game:
     count = max_attempts + 1
     play_game = True
     while play_game:
+        cls()
         # sets prettytable to default
         table.clear()
         if max_attempts == 0:
@@ -256,4 +257,4 @@ while start_game:
                         restart_game()
                     complete_guess = False
                 max_attempts -= 1
-                cls()
+                
