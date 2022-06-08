@@ -27,7 +27,14 @@ table = PrettyTable()
 
 
 # functions
+
+def cls():
+    # Clears the console
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 # Allows the letters to be colored in the terminal.
+
+
 def colored(r, g, b, text):
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
 
@@ -173,12 +180,14 @@ while start_game == True:
                     if word == answer2:
                         guess_2 = 1
                     if (guess_1 + guess_2) == 2:
+                        # the player has won the game
                         win_message(remain)
                         guess_1 = 0
                         guess_2 = 0
                         max_attempts = 0
                         restart_game()
                     else:
+                        # creates the table for prettytable
                         table.add_column("Hard", attempts1)
                         table.add_column('Mode', attempts2)
                         print(table)
@@ -211,7 +220,7 @@ while start_game == True:
                         guess_4 = 1
 
                     if (guess_1 + guess_2 + guess_3 + guess_4) == 4:
-
+                        # The player has won the game
                         win_message(remain)
                         guess_1 = 0
                         guess_2 = 0
@@ -220,6 +229,7 @@ while start_game == True:
                         max_attempts = 0
                         restart_game()
                     else:
+                        # creates the table for prettytable
                         table.add_column("Wordle", attempts1)
                         table.add_column('Super', attempts2)
                         table.add_column("Hard", attempts3)
@@ -230,8 +240,10 @@ while start_game == True:
                     # if the game is in normal mode.
                     attempts1.append(guess_match(answer1, word))
                     table.add_column("Wordle", attempts1)
+                    # prints the table from prettytable
                     print(table)
                     if word == answer1:
+                        # the player has won
                         win_message(remain)
                         max_attempts = 0
                         restart_game()
