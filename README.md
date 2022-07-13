@@ -63,10 +63,19 @@ As a returning user, I want to...
 There is only one page on the website. The terminal was designed by Code Institute.
 
 - I created an intro using pyfiglet to engage the user:
-    ![Welcome](/assets/images/welcome.png)
+    ![Welcome](/assets/images/introwordle.png)
 
-- The table the user uses as a refrence
-    ![Wordle Table](/assets/images/wordletable.png)
+- The single word table the user sees
+    ![Single Wordle Table](/assets/images/Wordlesingle.png)
+
+- The double word table the user uses as a refrence
+    ![Double Wordle Table](/assets/images/wordledouble.png)
+
+- The four word table the user uses as a refrence
+    ![Quadruple Wordle Table](/assets/images/wordletable.png)
+
+- What the player sees when they play
+    ![Wordle play](/assets/images/wordleplay.png)
 
 - The win message
     ![Win message](/assets/images/win.png)
@@ -121,6 +130,22 @@ I ran my code through [PEP8 Online Validator](http://pep8online.com/) and correc
 ![pep8 validator](/assets/images/testing.png)
 The errors left are for the print statements in the instructions.
 
+Bug Fixes:
+- Multiple word games completing after 1 word was guessed:
+
+To fix this I had to give a value to each of the words, so that only when all the words had been correctly guessed would they win.
+
+- Non alphabet characters permitted in the input:
+
+To solve that I made sure that all characters in their input is part of the alphabet with the isalpha() command for each input.
+
+- inputs outside of the inital choice for difficulty:
+
+To remove any options for diffculty outside of the proper choices, I put in a exception to remove any chance of user input going wrong. The game won't start until a proper choice is chosen. Just in case I have a backup in the challenge selection that resorts to a standard game if anything goes wrong with the choice.
+
+- inputs outside of restarting the game:
+
+A similar story of resolving the bug where the user can input anyting outside of the correct inputs. A simple exception case to ensure that they select one of the two choices.
 
 Unsolved Bugs:
 - Each letter is taking as their own entity, so any letter that appears twice in your guess would come back correct, even if there is only one letter in the answer.

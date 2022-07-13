@@ -8,6 +8,10 @@ from prettytable import PrettyTable
 import os
 # import pyfiglet
 import pyfiglet
+# import sleep
+from time import sleep
+# import system
+import sys
 
 # Word length variable
 WORD_LENGTH = 5
@@ -58,11 +62,11 @@ def guess_match(theanswer, theguess):
 
 
 def num_of_attempts(challenge):
-    if challenge == '1':
+    if challenge == 1:
         return 6
-    elif challenge == '2':
+    elif challenge == 2:
         return 7
-    elif challenge == '3':
+    elif challenge == 3:
         return 8
     else:
         return 6
@@ -71,20 +75,45 @@ def num_of_attempts(challenge):
 
 
 def restart_game():
-    restart = input('Would you like to play again. Y or N')
     global start_game, play_game, attempts1, attempts2, attempts3, attempts4
-    if restart.lower() == 'n':
-        start_game = False
-        play_game = False
-    else:
-        play_game = False
-        attempts1.clear()
-        attempts2.clear()
-        attempts3.clear()
-        attempts4.clear()
+    restart = 0
+    while restart != 'y' or restart != 'n':
+        try:
+            restart = str(input('Would you like to play again. Y or N: \n'))
+            if restart.lower() == 'n':
+                start_game = False
+                play_game = False
+                return restart
+            elif restart.lower() == 'y':
+                play_game = False
+                attempts1.clear()
+                attempts2.clear()
+                attempts3.clear()
+                attempts4.clear()
+                return restart
+            else:
+                raise ValueError()
+        except ValueError:
+            print('Please input either (Y)es or (N)o')
+        
 
+# Users selects the difficulty
+def get_challenge():
+    while True:
+        try:
+            challenge = int(input(
+                "Press 1 for easy mode, 2 for hard mode and 3 for super hard mode: \n"))
+            print(challenge)
+            if challenge == 1 or challenge == 2 or challenge == 3:
+                return challenge
+            else:
+                raise ValueError()
+        except ValueError:
+            print('Please enter either 1, 2 or 3')
 
 # prints out a win message once the words have been guessed.
+
+
 def win_message(remain):
     win = pyfiglet.figlet_format("You Win!", justify="center")
     print(win)
@@ -97,6 +126,36 @@ welcome = pyfiglet.figlet_format("Wordel", justify="center")
 print(welcome)
 print("Word guessing command line game".center(80) + "\n")
 print("Created by Mark Byrne".center(80) + "\n")
+sleep(1)
+
+print(
+    "Welcome to Wordel. A wordle clone. This game has three different modes.")
+sleep(1)
+print(
+    'The game is simple. Input a five letter word.')
+sleep(1)
+print(
+    'If the letters in your guess are both in the word and in the same position')
+sleep(1)
+print(
+    'It will return ' + colored(0, 255, 0, "green"))
+sleep(1)
+print(
+    'If the letters in your guess are in the word but not in the same position')
+sleep(1)
+print(
+    'It will return ' + colored(255, 255, 0, "Yellow"))
+sleep(1)
+print(
+    'If the letter is not in the word at all. It will return ' +
+    colored(255, 0, 0, 'Red'))
+sleep(1)
+print("That's it, simple right?")
+sleep(1)
+print('There are three modes you can choose!')
+print('Normal, where you only guess one word!')
+print('Hard, where you have to guess two words!')
+print('Finally, Super Hard, where you have to guess four words!')
 
 # sets initial values for game.
 start_game = True
@@ -113,34 +172,9 @@ while start_game:
     answer4 = random.choice(word_list)
     if answer4 == answer3:
         answer4 = random.choice(word_list)
-# choose to see instructions or play.
-    start = input(
-        'Press 1 to learn how to play, press 2 to choose difficulty: \n')
-    if start == '1':
-        #   instructions on how to play
-        print(
-            "Welcome to Wordel. A wordle clone. This game has three different modes.")
-        print(
-            'The game is simple. Input a five letter word.')
-        print(
-            'If the letters in your guess are both in the word and in the same position')
-        print(
-            'It will return ' + colored(0, 255, 0, "green"))
-        print(
-            'If the letters in your guess are in the word but not in the same position')
-        print(
-            'It will return ' + colored(255, 255, 0, "Yellow"))
-        print(
-            'If the letter is not in the word at all. It will return ' +
-            colored(255, 0, 0, 'Red'))
-        print("That's it, simple right?")
-        print('There are three modes you can choose!')
-        print('Normal, where you only guess one word!')
-        print('Hard, where you have to guess two words!')
-        print('Finally, Super Hard, where you have to guess four words!')
-    # sets the diffculty for the player
-    challenge = input(
-        "Press 1 for easy mode, 2 for hard mode and 3 for super hard mode: \n")
+
+    # Sets challenge level
+    challenge = get_challenge()
     # sets the max attempts for a player
     max_attempts = num_of_attempts(challenge)
     count = max_attempts + 1
@@ -160,7 +194,7 @@ while start_game:
             # print(answer1, answer2, answer3, answer4)
             # input for guess
             word = input('Guess a five letter Word: ').lower()
-            if len(word) != WORD_LENGTH:
+            if len(word) != WORD_LENGTH or word.isalpha() == False:
                 # if the input does not work for the game
                 print('You guess must have five letters')
                 complete_guess = False
@@ -170,7 +204,7 @@ while start_game:
                 cls()
             # starts the game
             while complete_guess:
-                if challenge == '2':
+                if challenge == 2:
                     # if the game is in hard mode
                     if guess_1 == 1:
                         # if the word has been guessed it will fill the rest of the array.
@@ -200,7 +234,7 @@ while start_game:
                         table.add_column('Mode', attempts2)
                         print(table)
                     complete_guess = False
-                elif challenge == '3':
+                elif challenge == 3:
                     # if the game is in super hard mode
                     if guess_1 == 1:
                         attempts1.append(" ".join(["_"] * WORD_LENGTH))
@@ -257,4 +291,3 @@ while start_game:
                         restart_game()
                     complete_guess = False
                 max_attempts -= 1
-                
